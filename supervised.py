@@ -77,6 +77,7 @@ def main(number_of_atoms, j2, batch_s, number_of_iterations):
     ma = nk.machine.RbmSpin(hilbert=hi, alpha=1)
     ma.init_random_parameters(seed=1234, sigma=0.01)
     # Optimizer
+    #op = nk.optimizer.Sgd(learning_rate=0.01)
     op = nk.optimizer.AdaDelta()
     
     # Supervised learning object
@@ -132,7 +133,7 @@ def main(number_of_atoms, j2, batch_s, number_of_iterations):
     plt.semilogy(iters, 1.-overlap)
     plt.show()
     
-main(10,0.55,400,4000)
+main(12,0.4,50,1000)
 
 
 
